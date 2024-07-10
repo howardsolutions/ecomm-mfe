@@ -1,3 +1,1 @@
-import 'products/ProductsIndex';
-
-import('./boostrap')
+import('./boostrap');
