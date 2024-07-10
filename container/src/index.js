@@ -1,1 +1,3 @@
-console.log("HI from Container");
+import 'products/ProductsIndex';
+
+import('./boostrap')
