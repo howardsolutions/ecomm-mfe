@@ -9,7 +9,7 @@ function productMount(el) {
         products += `<div>${name}</div>`
     };
 
-    document.querySelector(el).innerHTML = products;
+    el.innerHTML = products;
 }
 
 // Context 1: Running the product in isolation in development
