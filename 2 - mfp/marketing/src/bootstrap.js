@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from "./App"
+
 
 function marketingMount(el) {
     ReactDOM.render(
-        <h1>Hi there</h1>,
+        <App />,
         el
     )
 }
