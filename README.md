@@ -10,7 +10,7 @@
 ### 3. [Share Dependencies between MicroFE Apps](https://howardphung.hashnode.dev/share-dependencies-between-micro-fe-apps)
 
 
-## Application Requirements 
+## Application Requirements (for MFP)
 
 ### Inflexible Requirement #1: ZERO Coupling between Child Projects
 
