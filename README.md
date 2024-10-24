@@ -75,3 +75,17 @@ Each time make a change to one of these projects
 => Create a production build using WEBPACK
 
 => Upload the result to AWS S3
+
+## A production-style Workflow
+
+👉 Each team develops features on git branches named something like `container-dev` 
+
+👉 Feature complete and ready for deployment? PUSH branch to github
+
+👉 Create pull request to merge into master/main
+
+👉 Other engineers REVIEW
+
+👉 When ready to deploy, MERGE the PR
+
+👉 Workflow detects a change => the `master / main` branch, deployment runs!
