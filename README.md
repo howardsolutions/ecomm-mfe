@@ -89,3 +89,22 @@ Each time make a change to one of these projects
 👉 When ready to deploy, MERGE the PR
 
 👉 Workflow detects a change => the `master / main` branch, deployment runs!
+
+
+## Issues with CSS in Microfrontends
+
+👉 In micro frontend we have multiple different apps, from different teams, each team can have slightly different way of styling, which leads to conflicting CSS when they assembled inside the container.
+
+### SOLUTION
+
+1) CSS SCOPING
+  - Custom CSS you are writing for your project 
+    - use CSS in JS lib
+    - Use React built in component style scoping
+    - Use Angular's built-in component style scoping....
+    - "Namespace" all your CSS
+
+2) CSS coming from a component library or CSS library (bootstrap)
+
+    - Use a component library that does css-in-js
+    - Manually build the css lib and apply namespacing techniques to it
