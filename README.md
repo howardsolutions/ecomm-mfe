@@ -51,3 +51,27 @@
 👉 Probably need a CI CD pipeline of some sort 
 
 👉 At present, the remoteEntry.js file name is fixed! Need to think about Caching issues.
+
+## PATH to Production 
+
+Git Monorepo, includes: Container, marketing, dashboard, auth. 
+
+Each time make a change to one of these projects
+
+=> TRIGGER Build a production version of corresponding apps 
+
+=> UPLOAD the files to Amazon S3
+
+## Workflow for deploying CONTAINER
+
+- Whenever code is pushed to the master branch, and this commit contains a change to the `Container` folder
+
+-- COMMANDS executed in a virtual machine HOSTED by GITHUB
+
+=> Change into the container folder 
+
+=> Install dependencies
+
+=> Create a production build using WEBPACK
+
+=> Upload the result to AWS S3
