@@ -182,3 +182,20 @@ They can change that, update that as they please.
 - We will eventually add in some code to make sure we sync the PATH across multiple different copy of HISTORY 
 
 - WHAT'S MOST IMPORTANT IS that as these different copies of history decide to start to NAVIGATE AROUND, they are not going to the address bar to change it in someway. which can lead to some potential big problem down the road.
+
+## COMMUNICATION BETWEEN APPS
+
+Communication about Routing between Container and SubApp! <br />
+It should be done in as GENERIC a way as possible!
+
+1) User clicks link governed by Container (Browser History)
+
+=> Communicate the change DOWN to MARKETING
+
+=> Marketing's Memory History should UPDATE its current path.
+
+2) User clicks link governed by Marketing (Memory History)
+
+=> Communicate the change UP to CONTAINER
+
+=> CONTAINER'S BROWSER HISTORY should UPDATE its current path

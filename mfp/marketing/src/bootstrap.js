@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from "./App"
-
+import App from './App';
+import { createMemoryHistory } from 'history';
 
 function marketingMount(el) {
-    ReactDOM.render(
-        <App />,
-        el
-    )
+  const memoryHistory = createMemoryHistory();
+
+  ReactDOM.render(<App history={memoryHistory} />, el);
 }
 // Run the Marketing app independently
 if (process.env.NODE_ENV === 'development') {
-    const devRoot = document.querySelector('#_marketing-dev-root');
+  const devRoot = document.querySelector('#_marketing-dev-root');
 
-    if (devRoot) marketingMount(devRoot);
+  if (devRoot) marketingMount(devRoot);
 }
 
 // Expose for the container
-export {marketingMount}
+export { marketingMount };
