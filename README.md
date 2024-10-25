@@ -142,3 +142,43 @@ Each time make a change to one of these projects
 👉 Each app might be using a completely different navigation framework
 
 👉 We might swap out or upgrade navigation libraries all the time -- shouldn't require a rewrite of the rest of the app.
+
+## Routing libraries decide what content to show on the screen.
+
+👉 HISTORY => Object to GET and SET current PATH the user is visting
+
+👉 ROUTER => Shows different content BASED upon the current PATH
+
+### BROWSER HISTORY OBJECT
+
+-> Look at the `path` portion of the `url` (everything after the domain) to figure out WHAT the CURRENT PATH is.
+
+`http ://app.com  /maketing/price`
+
+### MEMORY HISTORY (Abstract History - in VUEJS)
+
+-> KEEP track of the CURRENT PATH in MEMORY
+
+`http ://app.com  /maketing/price`
+
+### HASH HISTORY
+
+-> Look at everything after the `#` in the URL to figure out the current path.
+
+`http ://app.com  #marketing/price`
+
+## Back to the application
+
+- We gonna make use of BROWSER HISTORY in CONTAINER App
+
+AND MEMORY HISTORY in Sub-app (REMOTE)
+
+- The BROWSER HISTORY inside of the CONTAINER is the ONLY copy of HISTORY that will access the Address bar and take a look at the URL inside there, eventually update it as well.
+
+- The MEMORY HISTORY object inside all of our different childeren are going to have their own SEPARATE COPY of what the current URL is.
+
+They can change that, update that as they please.
+
+- We will eventually add in some code to make sure we sync the PATH across multiple different copy of HISTORY 
+
+- WHAT'S MOST IMPORTANT IS that as these different copies of history decide to start to NAVIGATE AROUND, they are not going to the address bar to change it in someway. which can lead to some potential big problem down the road.
