@@ -157,7 +157,7 @@ Each time make a change to one of these projects
 
 ### MEMORY HISTORY (Abstract History - in VUEJS)
 
--> KEEP track of the CURRENT PATH in MEMORY
+-> KEEP track of the CURRENT PATH in MEMORY, don't show the current path changes dirrectly in address bar. But can view with a console.log
 
 `http ://app.com  /maketing/price`
 

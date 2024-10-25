@@ -8,7 +8,7 @@ export default function MarketingApp() {
   const history = useHistory();
 
   useEffect(() => {
-    marketingMount(ref.current, {
+    const { onParentNavigate } = marketingMount(ref.current, {
       onNavigate: (location) => {
         const { pathName } = history.location;
 
@@ -19,6 +19,8 @@ export default function MarketingApp() {
         }
       },
     });
+
+    history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref}></div>;
