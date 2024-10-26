@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { createMemoryHistory } from 'history';
+import { createMemoryHistory, createBrowserHistory } from 'history';
 
-function marketingMount(el, { onNavigate }) {
-  const memoryHistory = createMemoryHistory();
+function marketingMount(el, { onNavigate, defaultHistory }) {
+  const memoryHistory = defaultHistory || createMemoryHistory();
 
   if (onNavigate) {
     memoryHistory.listen(onNavigate);
@@ -28,7 +28,8 @@ function marketingMount(el, { onNavigate }) {
 if (process.env.NODE_ENV === 'development') {
   const devRoot = document.querySelector('#_marketing-dev-root');
 
-  if (devRoot) marketingMount(devRoot, {});
+  if (devRoot)
+    marketingMount(devRoot, { defaultHistory: createBrowserHistory() });
 }
 
 // Expose for the container
