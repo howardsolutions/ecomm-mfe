@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
 
-function marketingMount(el, { onNavigate, defaultHistory }) {
-  const memoryHistory = defaultHistory || createMemoryHistory();
+function marketingMount(el, { onNavigate, defaultHistory, initialPath }) {
+  const memoryHistory =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
 
   if (onNavigate) {
     memoryHistory.listen(onNavigate);

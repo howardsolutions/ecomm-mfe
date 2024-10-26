@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
 
-function authMount(el, { onNavigate, defaultHistory }) {
-  const memoryHistory = defaultHistory || createMemoryHistory();
+function authMount(el, { onNavigate, defaultHistory, initialPath }) {
+  const memoryHistory =
+    defaultHistory ||
+    createMemoryHistory({
+      initialEntries: [initialPath],
+    });
 
   if (onNavigate) {
     memoryHistory.listen(onNavigate);
@@ -28,8 +32,7 @@ function authMount(el, { onNavigate, defaultHistory }) {
 if (process.env.NODE_ENV === 'development') {
   const devRoot = document.querySelector('#_auth-dev-root');
 
-  if (devRoot)
-    authMount(devRoot, { defaultHistory: createBrowserHistory() });
+  if (devRoot) authMount(devRoot, { defaultHistory: createBrowserHistory() });
 }
 
 // Expose for the container
