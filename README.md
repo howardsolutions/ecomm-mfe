@@ -210,4 +210,4 @@ It should be done in as GENERIC a way as possible!
 
 👉 1. Each app is aware of auth
 
-👉 2. Centralize Auth in `container`
+👉 2. Centralize Auth in `container` ✅

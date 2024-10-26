@@ -37,3 +37,5 @@ if (process.env.NODE_ENV === 'development') {
 
 // Expose for the container
 export { authMount };
+
+console.log("Manually triggering the pipeline to run")
