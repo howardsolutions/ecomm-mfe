@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { createMemoryHistory, createBrowserHistory } from 'history';
 
-function authMount(el, { onNavigate, defaultHistory, initialPath }) {
+function authMount(el, { onNavigate, defaultHistory, initialPath, onSignIn }) {
   const memoryHistory =
     defaultHistory ||
     createMemoryHistory({
@@ -14,7 +14,7 @@ function authMount(el, { onNavigate, defaultHistory, initialPath }) {
     memoryHistory.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={memoryHistory} />, el);
+  ReactDOM.render(<App history={memoryHistory} onSignIn={onSignIn} />, el);
 
   return {
     onParentNavigate(location) {
