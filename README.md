@@ -199,3 +199,15 @@ It should be done in as GENERIC a way as possible!
 => Communicate the change UP to CONTAINER
 
 => CONTAINER'S BROWSER HISTORY should UPDATE its current path
+
+## NOTES AROUND AUTHENTICATION
+
+👉 Auth app is for signing in/up users
+
+👉 Auth app is not for enforcing permissions, allowing access to certain routes. Or figuring out if user is signed in.
+
+👉 TWO APPROACHES FOR HANDLING AUTH
+
+👉 1. Each app is aware of auth
+
+👉 2. Centralize Auth in `container`
