@@ -17,13 +17,11 @@ function marketingMount(el, { onNavigate, defaultHistory, initialPath }) {
   ReactDOM.render(<App history={memoryHistory} />, el);
 
   return {
-    onParentNavigate(location) {
-      const { pathName: nextPathName } = location;
+    onParentNavigate({ pathname: nextPathname }) {
+      const { pathname } = history.location;
 
-      const pathName = memoryHistory.location;
-
-      if (pathName !== nextPathName) {
-        memoryHistory.push(nextPathName);
+      if (pathname !== nextPathname) {
+        history.push(nextPathname);
       }
     },
   };

@@ -211,3 +211,15 @@ It should be done in as GENERIC a way as possible!
 👉 1. Each app is aware of auth
 
 👉 2. Centralize Auth in `container` ✅
+
+## Takeaways 
+
+👉 The requirements drive ur architecture
+
+👉 ALWAYS ask yourself if I have to change this in the future will I have to change another ap?
+
+👉 Every will forget React, Vue
+
+👉 Don't forget to scope your CSS.
+
+👉 MFE's might cause issues in PRODUCTION that you dont see in DEV

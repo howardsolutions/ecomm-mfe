@@ -10,15 +10,15 @@ export default function MarketingApp() {
   useEffect(() => {
     const { onParentNavigate } = marketingMount(ref.current, {
       onNavigate: (location) => {
-        const { pathName } = history.location;
+        const { pathname } = history.location;
 
         const { pathname: nextPathName } = location;
 
-        if (pathName !== nextPathName) {
+        if (pathname !== nextPathName) {
           history.push(nextPathName);
         }
       },
-      initialPath: history.location.pathName,
+      initialPath: history.location.pathname,
     });
 
     history.listen(onParentNavigate);

@@ -17,13 +17,11 @@ function authMount(el, { onNavigate, defaultHistory, initialPath, onSignIn }) {
   ReactDOM.render(<App history={memoryHistory} onSignIn={onSignIn} />, el);
 
   return {
-    onParentNavigate(location) {
-      const { pathName: nextPathName } = location;
+    onParentNavigate({ pathname: nextPathname }) {
+      const { pathname } = history.location;
 
-      const pathName = memoryHistory.location;
-
-      if (pathName !== nextPathName) {
-        memoryHistory.push(nextPathName);
+      if (pathname !== nextPathname) {
+        history.push(nextPathname);
       }
     },
   };
@@ -38,4 +36,4 @@ if (process.env.NODE_ENV === 'development') {
 // Expose for the container
 export { authMount };
 
-console.log("Manually triggering the pipeline to run")
+console.log('Manually triggering the pipeline to run');

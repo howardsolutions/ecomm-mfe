@@ -1,29 +1,25 @@
-import React, { useEffect, useRef } from 'react';
 import { authMount } from 'auth/AuthApp';
+import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-export default function AuthApp({ onSignIn }) {
+export default () => {
   const ref = useRef(null);
-
   const history = useHistory();
 
   useEffect(() => {
     const { onParentNavigate } = authMount(ref.current, {
-      onNavigate: (location) => {
-        const { pathName } = history.location;
+      initialPath: history.location.pathname,
+      onNavigate: ({ pathname: nextPathname }) => {
+        const { pathname } = history.location;
 
-        const { pathname: nextPathName } = location;
-
-        if (pathName !== nextPathName) {
-          history.push(nextPathName);
+        if (pathname !== nextPathname) {
+          history.push(nextPathname);
         }
       },
-      initialPath: history.location.pathName,
-      onSignIn,
     });
 
     history.listen(onParentNavigate);
   }, []);
 
-  return <div ref={ref}></div>;
-}
+  return <div ref={ref} />;
+};
